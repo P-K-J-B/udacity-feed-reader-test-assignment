@@ -75,11 +75,11 @@ $(function() {
         /*With the laodFeed(); function being asynchronous, we use the beforeEach();
         function to run loadFeed(); and wait for it to complete before running our
         tests. This test is to determine if, after running, loadFeed(); successfuly 
-        adds .entry content to the load .feed container. We do this simply by checking 
-        to see that elements with the .entry class in the .feed container are defined.
+        adds .entry content to the load .feed container. We do this by checking that
+        the total number of .entry class elements in the .feed container is more than 0.
         */
         it('should include at least 1 entry in the .feed container', function() {
-            expect($('.feed .entry')).toBeDefined();
+            expect($('.feed .entry').length).not.toBe(0);
         });
 
     });
